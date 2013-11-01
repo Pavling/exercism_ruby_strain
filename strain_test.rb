@@ -40,34 +40,28 @@ class ArrayTest < MiniTest::Unit::TestCase
   end
 
   def test_empty_discard
-    skip
     assert_equal [], [].discard {|e| e < 10}
   end
 
   def test_discard_nothing
-    skip
     assert_equal [1, 2, 3], [1, 2, 3].discard {|e| e > 10}
   end
 
   def test_discard_first_and_last
-    skip
     assert_equal [2], [1, 2, 3].discard {|e| e.odd?}
   end
 
   def test_discard_neither_first_nor_last
-    skip
     assert_equal [1, 3, 5], [1, 2, 3, 4, 5].discard {|e| e.even?}
   end
 
   def test_discard_strings
-    skip
     words = %w(apple zebra banana zombies cherimoya zelot)
     result = words.discard {|word| word.start_with?('z')}
     assert_equal %w(apple banana cherimoya), result
   end
 
   def test_discard_arrays
-    skip
     rows = [
       [1, 2, 3],
       [5, 5, 5],
